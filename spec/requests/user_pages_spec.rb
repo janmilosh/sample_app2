@@ -30,11 +30,7 @@ describe "User pages" do
 			it "should not create a user" do
 				expect { click_button submit }.not_to change(User, :count)
 			end
-<<<<<<< HEAD
 
-=======
-			
->>>>>>> sign-in-out
 			describe "after submission" do
 				before { click_button submit }
 
@@ -55,28 +51,15 @@ describe "User pages" do
 			it "should create a user" do
 				expect { click_button submit }.to change(User, :count).by(1)
 			end
-<<<<<<< HEAD
 
-=======
-			
->>>>>>> sign-in-out
 			describe "after saving the user" do
 				before { click_button submit }
 				let(:user) { User.find_by_email('user@example.com') }
 
 				it { should have_selector('title', text: user.name) }
 				it { should have_selector('div.alert.alert-success', text: 'Welcome') }
-<<<<<<< HEAD
+				it { should have_link('Sign out') }	
 			end
-
-=======
-
-				it { should have_link('Sign out') }
-
-			end
-
-			
->>>>>>> sign-in-out
 		end
 	end
 end
